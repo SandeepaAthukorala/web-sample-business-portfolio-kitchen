@@ -25,10 +25,10 @@ export default function Hero() {
             Design Your Kitchen with the Experts
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200">
-            Eco-friendly Design & Precision
+          Creating beautiful and functional kitchen spaces since 2000. Your dream kitchen awaits.
           </p>
           <button 
-            className="bg-white text-black px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:bg-gray-100 transition-colors"
+            className="bg-amber-500 text-black px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:bg-gray-100 transition-colors"
             onClick={() => scrollToSection('portfolio')}
           >
             View our portfolio

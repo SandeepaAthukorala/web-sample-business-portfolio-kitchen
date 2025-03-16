@@ -11,13 +11,17 @@ export default function Contact() {
               <h2 className="text-4xl font-bold text-white mb-4">Let's Chat About Your Vision!</h2>
               <p className="text-gray-300 mb-8">
                 Fill out the form, and our team will connect with you within{' '}
-                <span className="text-emerald-400">6 HOURS</span>{' '}
-                <Zap className="inline w-5 h-5 text-emerald-400" />
+                <span className="text-amber-500">24 HOURS</span>{' '}
               </p>
               
               <div className="flex items-center gap-2 text-gray-300 mb-8">
                 <MessageSquare className="w-5 h-5" />
                 <span>contact@kitchen.com</span>
+              </div>
+
+              <div className="flex items-center gap-2 text-gray-300 mb-8">
+                <Zap className="w-5 h-5" />
+                <span>+1 (555) 123-4567</span>
               </div>
 
               <div>
@@ -86,19 +90,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-red-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-600 transition-colors"
+                  className="w-full bg-amber-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-600 transition-colors"
                 >
                   Book My Free Consultation
                 </button>
-
-                <div className="flex justify-end items-center gap-2 text-gray-400">
-                  <img
-                    src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?auto=format&fit=crop&q=80&w=32&h=32"
-                    alt="Zoom"
-                    className="w-8 h-8 object-cover rounded"
-                  />
-                  <span>ZOOM</span>
-                </div>
               </form>
             </div>
           </div>
