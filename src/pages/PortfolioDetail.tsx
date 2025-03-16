@@ -12,7 +12,6 @@ const portfolioDetails = {
       "https://res.cloudinary.com/das8wrfd1/image/upload/v1742143141/4_bepmrn.webp",
       "https://res.cloudinary.com/das8wrfd1/image/upload/v1742143140/9_vutvcc.webp",
       "https://res.cloudinary.com/das8wrfd1/image/upload/v1742143139/10_yb4ywu.webp",
-      
     ]
   },
   concept: {
@@ -43,13 +42,9 @@ const portfolioDetails = {
   }
 };
 
-
-
-
 export default function PortfolioDetail() {
   const { id } = useParams<{ id: string }>();
   const collection = id ? portfolioDetails[id as keyof typeof portfolioDetails] : null;
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -81,7 +76,6 @@ export default function PortfolioDetail() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
               className="relative aspect-square rounded-xl overflow-hidden group cursor-pointer"
-              onClick={() => setSelectedImage(index)}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
               
@@ -92,36 +86,12 @@ export default function PortfolioDetail() {
                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
               />
               
-                <div className="absolute bottom-0 left-0 w-full p-4 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex justify-center">
+              <div className="absolute bottom-0 left-0 w-full p-4 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex justify-center">
                 <span className="text-white text-lg font-bold">Explore This Masterpiece</span>
-                </div>
+              </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Lightbox Modal */}
-        {selectedImage !== null && (
-          <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-            <button
-              className="absolute top-4 right-4 text-white text-4xl"
-              onClick={() => setSelectedImage(null)}
-            >
-              &times;
-            </button>
-            
-            <div className="relative max-w-4xl w-full">
-              <img
-                src={collection.images[selectedImage]}
-                alt={`Enlarged view - ${collection.title}`}
-                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-              />
-              
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-sm">{selectedImage + 1} / {collection.images.length}</p>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
