@@ -68,7 +68,7 @@ export default function PortfolioDetail() {
           <p className="text-gray-400 text-xl mb-8 max-w-2xl">{collection.description}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {collection.images.map((image, index) => (
             <motion.div
               key={index}
@@ -77,7 +77,6 @@ export default function PortfolioDetail() {
               transition={{ delay: index * 0.1 }}
               className="relative aspect-square rounded-xl overflow-hidden group cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
               
               <LazyLoadImage
                 src={image}
@@ -85,10 +84,7 @@ export default function PortfolioDetail() {
                 effect="opacity"
                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
               />
-              
-              <div className="absolute bottom-0 left-0 w-full p-4 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex justify-center">
-                <span className="text-white text-lg font-bold">Explore This Masterpiece</span>
-              </div>
+
             </motion.div>
           ))}
         </div>
